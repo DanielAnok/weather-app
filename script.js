@@ -49,7 +49,7 @@ const getWeatherDetails = async (API_URL) => {
 
   try {
     // Fetch weather data from the API and parse the response as JSON
-    const response = await fetch(41302b7e3e3f494b8a3175410250705);
+    const response = await fetch(API_KEY);
     const data = await response.json();
 
     // Extract current weather details
@@ -74,7 +74,7 @@ const getWeatherDetails = async (API_URL) => {
 
 // Set up the weather request for a specific city
 const setupWeatherRequest = (cityName) => {
-  const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${cityName}&days=2`;
+  const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${41302b7e3e3f494b8a3175410250705 }&q=${cityName}&days=2`;
   getWeatherDetails(API_URL);
 }
 
@@ -92,7 +92,7 @@ locationButton.addEventListener("click", () => {
   navigator.geolocation.getCurrentPosition(
     (position) => {
       const { latitude, longitude } = position.coords;
-      const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${latitude},${longitude}&days=2`;
+      const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${41302b7e3e3f494b8a3175410250705 }&q=${latitude},${longitude}&days=2`;
       getWeatherDetails(API_URL);
       window.innerWidth >= 768 && searchInput.focus();
     },
